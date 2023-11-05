@@ -106,7 +106,7 @@ function Navbar({ isOpen }: NavbarProps) {
 
 	return (
 		<>
-			<nav className="hidden md:flex relative  justify-between items-center shadow-lg px-24 py-3 dark:bg-[#232324]">
+			<nav className="hidden md:flex relative  justify-between items-center shadow-lg px-28 py-3 dark:bg-[#232324]">
 				<div className="object-contain h-full w-20">
 					<Logo />
 				</div>
@@ -143,17 +143,23 @@ function Navbar({ isOpen }: NavbarProps) {
 							{/* <button className="z-50 absolute" onClick={handleClick}>
 								Close
 							</button> */}
-							<div className="absolute w-full h-full bg-red-500 blur-sm -z-[10]" />
+							<div className="absolute w-full h-full bg-white dark:bg-black blur-xl -z-[10]" />
 							<div className="flex items-center flex-col justify-evenly space-y-4  w-full h-full  z-[99]">
+								<div className="absolute top-10 left-10 z-[100] object-contain h-full w-20">
+									<Logo />
+								</div>
 								<motion.div
 									// initial="initial"
 									// animate="animate"
+
+									className="text"
 									variants={childrenVariant}>
 									About me
 								</motion.div>
 								<motion.div
 									// initial="initial"
 									// animate="animate"
+									className="text"
 									variants={childrenVariant}>
 									Projects
 								</motion.div>
@@ -161,6 +167,7 @@ function Navbar({ isOpen }: NavbarProps) {
 									// onClick={() => alert("sd")}
 									// initial="initial"
 									// animate="animate"
+									className="text"
 									variants={childrenVariant}>
 									Projects
 								</motion.div>
@@ -173,7 +180,7 @@ function Navbar({ isOpen }: NavbarProps) {
 									className="flex gap-x-5">
 									{icons.map(({ link, icon }, indx) => (
 										<motion.div variants={iconsVariants} key={indx}>
-											<a href={link} target="_blank" className="text-3xl">
+											<a href={link} target="_blank" className="text-3xl icons">
 												{icon}
 											</a>
 										</motion.div>

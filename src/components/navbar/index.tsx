@@ -1,30 +1,15 @@
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
+
+import Switch from "../switch";
+import Logo from "../logo";
 
 interface NavbarProps {
 	isOpen: boolean;
 	handleClick: () => void;
 }
 
-function Navbar({ handleClick, isOpen }: NavbarProps) {
-	const [theme, setTheme] = useState("light");
-
-	console.log("nav", isOpen);
-
-	useEffect(() => {
-		const theme = localStorage.getItem("theme");
-		if (
-			theme == "dark" ||
-			(!("theme" in localStorage) &&
-				window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
-	}, [theme]);
-
+function Navbar({ isOpen }: NavbarProps) {
 	const navVariants: Variants = {
 		// initial: { transform: "translateX(100%)" },
 		animate: {
@@ -104,12 +89,47 @@ function Navbar({ handleClick, isOpen }: NavbarProps) {
 		},
 	};
 
+	const icons = [
+		{
+			icon: <BsGithub />,
+			link: "https://github.com/awyyyn",
+		},
+		{
+			icon: <BsLinkedin />,
+			link: "https://www.linkedin.com/in/alwin-puche-7295851b7",
+		},
+		{
+			icon: <BsInstagram />,
+			link: "https://github.com/awyyyn",
+		},
+	];
+
 	return (
 		<>
-			<motion.nav
-				initial={{ x: "100%" }}
-				animate={{ x: "0%", transition: { duration: 1 } }}
-				className="left-full md:left-0  absolute top-0 md:relative flex flex-col md:flex-row w-screen md:w-full h-screen md:max-h-14 justify-between items-center px-10"></motion.nav>
+			<nav className="hidden md:flex relative  justify-between items-center shadow-lg px-24 py-3 dark:bg-[#232324]">
+				<div className="object-contain h-full w-20">
+					<Logo />
+				</div>
+				<div className="flex gap-x-6">
+					<a href="#" className="link">
+						About me
+					</a>
+					<a href="#" className="link">
+						Projects
+					</a>
+					<a href="#" className="link">
+						Contact me
+					</a>
+				</div>
+				<div className="flex gap-x-4 items-center">
+					<Switch />
+					{icons.map(({ link, icon }, indx) => (
+						<a href={link} key={indx} target="_blank" className="icons">
+							{icon}
+						</a>
+					))}
+				</div>
+			</nav>
 
 			<AnimatePresence>
 				{isOpen && (
@@ -118,13 +138,13 @@ function Navbar({ handleClick, isOpen }: NavbarProps) {
 						initial="animateOut"
 						animate={"animate"}
 						exit={"animateOut"}
-						className="md:hidden h-screen w-screen absolute left-0 top-0">
+						className="md:hidden h-screen w-screen absolute left-0 top-0 z-[99]">
 						<div className="relative w-full h-full  ">
 							{/* <button className="z-50 absolute" onClick={handleClick}>
 								Close
 							</button> */}
-							<div className="absolute w-full h-full bg-white bg-opacity-20 blur-md z-10" />
-							<div className="flex items-center flex-col justify-evenly z-20 space-y-4  w-full h-full  z-[99]">
+							<div className="absolute w-full h-full bg-red-500 blur-sm -z-[10]" />
+							<div className="flex items-center flex-col justify-evenly space-y-4  w-full h-full  z-[99]">
 								<motion.div
 									// initial="initial"
 									// animate="animate"
@@ -138,29 +158,26 @@ function Navbar({ handleClick, isOpen }: NavbarProps) {
 									Projects
 								</motion.div>
 								<motion.div
+									// onClick={() => alert("sd")}
 									// initial="initial"
 									// animate="animate"
 									variants={childrenVariant}>
 									Projects
 								</motion.div>
+
+								<motion.div variants={childrenVariant}>
+									<Switch />
+								</motion.div>
 								<motion.div
 									variants={iconsContainerVariants}
 									className="flex gap-x-5">
-									<motion.div variants={iconsVariants}>
-										<a href="#" className="text-3xl">
-											<BsGithub />
-										</a>
-									</motion.div>
-									<motion.div variants={iconsVariants}>
-										<a href="#" className="text-3xl">
-											<BsLinkedin />
-										</a>
-									</motion.div>
-									<motion.div variants={iconsVariants}>
-										<a href="#" className="text-3xl">
-											<BsInstagram />
-										</a>
-									</motion.div>
+									{icons.map(({ link, icon }, indx) => (
+										<motion.div variants={iconsVariants} key={indx}>
+											<a href={link} target="_blank" className="text-3xl">
+												{icon}
+											</a>
+										</motion.div>
+									))}
 								</motion.div>
 							</div>
 							flex items-center flex-col justify-evenly z-20 space-y-4

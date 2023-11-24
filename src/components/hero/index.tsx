@@ -2,9 +2,9 @@ import hero from "../../assets/hero.svg";
 import { motion } from "framer-motion";
 function Hero() {
 	return (
-		<section className="h-screen sm:min-h-[600px] sm:h-screen md:max-h-[800px] lg:max-h-[900px] xl:max-h-[900px] overflow-hidden relative flex flex-col flex-wrap sm:flex-row px-10 md:px-28 ld:px-32 ">
-			<div className="min-h-[50%] sm:max-w-[50%] sm:h-full   justify-center flex flex-col">
-				<h1 className="text text-2xl font-poppins ">
+		<section className="dark:bg-[#1b1b1c] h-screen sm:min-h-[600px] overflow-x-hidden sm:h-screen md:max-h-[800px] lg:max-h-[900px] xl:max-h-[900px] overflow-scroll relative flex flex-col justify-center flex-wrap items-center px-10 md:px-16 lg:px-28   ">
+			<div className="min-h-[40%]  sm:max-w-[50%] min-w-[300px] sm:h-full relative justify-center flex flex-col ">
+				<h1 className="text text-xl font-poppins ">
 					Hello, <span className="">I&apos;m</span>{" "}
 					<motion.span
 						initial={{
@@ -22,21 +22,21 @@ function Hero() {
 							repeat: Infinity,
 							repeatDelay: 0.3,
 						}}
-						className="font-comfortaa text-5xl text-transparent bg-clip-text bg-gradient-to-tr from-yellow-200 to-blue-[#61A3BA] via-orange-500">
+						className="font-comfortaa text-6xl text-transparent bg-clip-text bg-gradient-to-tr from-yellow-200 to-blue-[#61A3BA] via-orange-500">
 						awyn
 					</motion.span>
 				</h1>
-				<h1 className="text-5xl text">Fullstack Developer</h1>
-				<p className="text leading-loose mt-2">
+				<h1 className="text-5xl text">Front-end Developer</h1>
+				<p className="text leading-loose mt-2 max-w-[80%]">
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea at error
 					eos, blanditiis unde corporis modi sit beatae incidunt odio laboriosam
 					quo totam maxime eius distinctio, nostrum non minima earum.
 				</p>
 			</div>
-			<div className="min-h-[50%] flex items-center justify-center sm:h-full  sm:w-[50%]  ">
+			<div className="min-h-[40%]  flex items-center relative w-full  justify-center  min-w-[300px] max-w-[50%] max-h-fit sm:w-[50%]  ">
 				<img
 					src={hero}
-					className="object-contain  sm:m-auto  sm:min-h-[600px]   min-w-full -scale-x-[1]"
+					className="object-contain  sm:m-auto  sm:min-h-[600px] static overflow-hidden  -scale-x-[1]"
 				/>
 			</div>
 		</section>

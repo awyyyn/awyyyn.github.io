@@ -3,17 +3,16 @@ const Navbar = lazy(() => import("./components/navbar/index"));
 import { BsChevronLeft } from "react-icons/bs";
 import { IconBase } from "react-icons";
 import Hero from "./components/hero";
+import Projects from "./components/projects";
 
 function App() {
 	const [isNavOpen, setIsNavOpen] = useState(false);
-	// useEffect(() => {
-	// 	window.addEventListener("resize", () => {
-	// 		console.log(window.screen.width);
-	// 	});
-	// }, []);
 
 	return (
-		<div className="relative h-screen w-screen">
+		<div
+			className={`relative h-screen w-screen ${
+				isNavOpen && "overflow-y-hidden"
+			}`}>
 			<header className="relative">
 				<Suspense>
 					<Navbar
@@ -38,9 +37,9 @@ function App() {
 				</button>
 			</header>
 
-			<main className="">
+			<main>
 				<Hero />
-				<h1>asd</h1>
+				<Projects />
 			</main>
 		</div>
 	);

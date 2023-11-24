@@ -106,11 +106,13 @@ function Navbar({ isOpen }: NavbarProps) {
 
 	return (
 		<>
-			<nav className="hidden md:flex relative  justify-between items-center shadow-lg px-28 py-3 dark:bg-[#232324]">
-				<div className="object-contain h-full w-20">
+			<nav className="hidden md:flex md:fixed md:w-full md:z-10 relative  justify-between items-center backdrop-blur-lg	 shadow-lg md:px-16 lg:px-28 py-3 dark:bg-[#232324]">
+				{/* <div className="w-full h-full left-0 dark:hidden bg-blend-exclusion top-0 absolute blur-3xl" /> */}
+
+				<div className="object-contain h-full w-20 z-10">
 					<Logo />
 				</div>
-				<div className="flex gap-x-6">
+				<div className="flex gap-x-6 z-10">
 					<a href="#" className="link">
 						About me
 					</a>
@@ -121,7 +123,7 @@ function Navbar({ isOpen }: NavbarProps) {
 						Contact me
 					</a>
 				</div>
-				<div className="flex gap-x-4 items-center">
+				<div className="flex gap-x-4 items-center z-10">
 					<Switch />
 					{icons.map(({ link, icon }, indx) => (
 						<a href={link} key={indx} target="_blank" className="icons">
@@ -139,7 +141,7 @@ function Navbar({ isOpen }: NavbarProps) {
 						animate={"animate"}
 						exit={"animateOut"}
 						className="md:hidden h-screen w-screen absolute left-0 top-0 z-[99]">
-						<div className="relative w-full h-full  ">
+						<div className="relative w-full h-full   ">
 							{/* <button className="z-50 absolute" onClick={handleClick}>
 								Close
 							</button> */}

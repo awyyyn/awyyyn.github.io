@@ -1,9 +1,45 @@
+import { projects } from "../../utils/constant";
+import Card from "../card";
+import { Variants, motion } from "framer-motion";
+
 function index() {
+	const whileOnScreen = {
+		// offScreen: {
+		// 	transition: {
+		// 		type: "tween",
+		// 		duration: 0.8,
+		// 		staggerChildren: 0.5,
+		// 		staggerDirection: -1,
+		// 		delayChildren: 1,
+		// 	},
+		// },
+		// onScreen: {
+		// 	transition: {
+		// 		duration: 0.8,
+		// 		staggerChildren: 0.5,
+		// 		delayChildren: 0.4,
+		// 	},
+		// },
+	};
+
 	return (
-		<section className="dark:bg-[#1b1b1c] h-screen sm:min-h-[600px] overflow-x-hidden sm:h-screen md:max-h-[800px] lg:max-h-[900px] xl:max-h-[900px] overflow-scroll relative flex flex-col justify-center flex-wrap items-center px-10 md:px-16 lg:px-28   ">
-			<div>
-				<h1>Projects</h1>
-			</div>
+		<section
+			id="projects"
+			className="dark:bg-[#1b1b1c]  relative  px-10 md:px-16 lg:px-28 md:pt-16   ">
+			<motion.h1 className="">Projects</motion.h1>
+			<motion.div
+				variants={whileOnScreen}
+				animate="onScreen"
+				initial="offScreen"
+				className="gap-4 flex gap-y-8 mt-4 flex-wrap">
+				{projects.map((project, projIndex) => (
+					<Card
+						key={projIndex}
+						// github=""
+						{...project}
+					/>
+				))}
+			</motion.div>
 		</section>
 	);
 }

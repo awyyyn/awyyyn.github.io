@@ -26,7 +26,7 @@ function Hero() {
 						awyn
 					</motion.span>
 				</h1>
-				<h1 className="text-5xl text">Front-end Developer</h1>
+				<h1 className="text-5xl text">{/* Front-end */}Web Developer</h1>
 				<p className="text leading-loose mt-2 max-w-[80%]">
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea at error
 					eos, blanditiis unde corporis modi sit beatae incidunt odio laboriosam

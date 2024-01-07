@@ -2,14 +2,13 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
 
 import Switch from "../switch";
+import { AppContext, Context } from "../../context/context";
 import Logo from "../logo";
+import { useContext } from "react";
 
-interface NavbarProps {
-	isOpen: boolean;
-	handleClick: () => void;
-}
+function Navbar() {
+	const { isNavOpen } = useContext(AppContext) as Context;
 
-function Navbar({ isOpen }: NavbarProps) {
 	const navVariants: Variants = {
 		// initial: { transform: "translateX(100%)" },
 		animate: {
@@ -116,7 +115,7 @@ function Navbar({ isOpen }: NavbarProps) {
 					<a href="#" className="link">
 						About me
 					</a>
-					<a href="#" className="link">
+					<a href="#projects" className="link">
 						Projects
 					</a>
 					<a href="#" className="link">
@@ -134,7 +133,7 @@ function Navbar({ isOpen }: NavbarProps) {
 			</nav>
 
 			<AnimatePresence>
-				{isOpen && (
+				{isNavOpen && (
 					<motion.nav
 						variants={navVariants}
 						initial="animateOut"
@@ -165,14 +164,15 @@ function Navbar({ isOpen }: NavbarProps) {
 									variants={childrenVariant}>
 									Projects
 								</motion.div>
-								<motion.div
+								<motion.a
 									// onClick={() => alert("sd")}
 									// initial="initial"
 									// animate="animate"
+									href="#projects"
 									className="text"
 									variants={childrenVariant}>
 									Projects
-								</motion.div>
+								</motion.a>
 
 								<motion.div variants={childrenVariant}>
 									<Switch />

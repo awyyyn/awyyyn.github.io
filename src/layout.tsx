@@ -1,5 +1,5 @@
 import { AppContext, Context } from "./context/context";
-import { useContext, Suspense, lazy, Children } from "react";
+import { useContext, Suspense, lazy } from "react";
 const Navbar = lazy(() => import("./components/navbar/index"));
 import { BsChevronLeft } from "react-icons/bs";
 import { IconBase } from "react-icons";

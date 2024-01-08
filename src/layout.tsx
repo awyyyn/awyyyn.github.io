@@ -29,7 +29,7 @@ const Layout = () => {
 					</IconBase>
 				</div>
 			</button>
-			<main>
+			<main className="bg-slate-50 dark:bg-[#1b1b1c] md:px-24 lg:px-28 md:py-16 sm:px-14 px-4 py-4">
 				<Outlet />
 			</main>
 		</div>

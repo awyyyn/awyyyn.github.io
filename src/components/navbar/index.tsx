@@ -139,12 +139,12 @@ function Navbar() {
 						initial="animateOut"
 						animate={"animate"}
 						exit={"animateOut"}
-						className="md:hidden h-screen w-screen absolute left-0 top-0 z-[99]">
+						className="md:hidden h-screen w-screen backdrop-blur-3xl absolute left-0 top-0 z-[99]">
 						<div className="relative w-full h-full   ">
 							{/* <button className="z-50 absolute" onClick={handleClick}>
 								Close
 							</button> */}
-							<div className="absolute w-full h-full bg-white dark:bg-black blur-xl -z-[10]" />
+							{/* <div className="absolute w-full h-full    blur-xl -z-[10]" /> */}
 							<div className="flex items-center flex-col justify-evenly space-y-4  w-full h-full  z-[99]">
 								<div className="absolute top-10 left-10 z-[100] object-contain h-full w-20">
 									<Logo />

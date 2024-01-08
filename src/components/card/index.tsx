@@ -1,19 +1,5 @@
 import { Variants, motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 // import { FaLink } from "react-icons/fa6";
-
-interface CardProps {
-	img: string;
-	// github: string;
-	// url: string;
-	alt: string;
-	techs: string[];
-	description: string;
-	title: string;
-	hasApp: boolean;
-	mobileAppRepo: string;
-	webAppRepo: string;
-}
 
 const Card = ({
 	alt,
@@ -22,9 +8,12 @@ const Card = ({
 	techs,
 	title,
 	hasApp,
-	mobileAppRepo,
-	webAppRepo,
-}: CardProps) => {
+	appRepo,
+	id,
+	webRepo,
+	appUrl,
+	webUrl,
+}: Project) => {
 	const childrenVariant: Variants = {
 		animate: {
 			opacity: 1,
@@ -39,7 +28,7 @@ const Card = ({
 		},
 		animateOut: {
 			opacity: 0,
-			y: 80,
+			y: 30,
 			scale: 0.8,
 			transition: {
 				delay: 0.6,
@@ -57,44 +46,22 @@ const Card = ({
 			whileInView="animate"
 			exit="animateOut"
 			initial="animateOut"
-			className="relative dark:text-white dark:border-transparent dark:shadow-[#ffffff20] border shadow-lg md:mx-auto rounded-lg flex flex-col lg:flex-row items-start   group overflow-hidden">
-			<LazyLoadImage
-				className="w-full lg:w-[60%]"
+			className="relative dark:text-white dark:border-transparent dark:shadow-[#ffffff20] border shadow-lg md:mx-auto rounded-lg flex flex-col md:flex-row items-start   group overflow-hidden">
+			<img
+				className="w-full md:w-1/3 lg:w-1/2"
 				alt={alt}
 				src={img} // use normal <img> attributes as props
 			/>
-			<motion.div className="p-6 lg:w-[40%] space-y-4">
-				<h1 className="text-2xl font-semibold hover:underline">{title}</h1>
-				<div className="flex gap-x-2">
-					<h3 className="font-bold ">Description:</h3>
-					<p>{description}</p>
+			<motion.div className="p-4 lg:w-[40%] space-y-4">
+				<h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold hover:underline">
+					{title}
+				</h1>
+				<div className=" space-y-2">
+					<h3 className="font-bold   md:text-lg lg:text-xl">Description:</h3>
+					<p className="indent-5   md:text-lg lg:text-xl">
+						{description.substring(10)}...
+					</p>
 				</div>
-
-				<div className="flex flex-wrap gap-x-2 gap-y-1">
-					<b>Technologies: </b>
-					{techs.map((tech, index) => (
-						<code
-							key={index}
-							className="border dark:text-black px-2  rounded-md border-gray-200 bg-slate-50">
-							{tech}
-						</code>
-					))}
-				</div>
-
-				<div className="flex flex-wrap gap-x-2">
-					<h3 className="font-bold pr-[1ch]">Web:</h3>
-					<a href={webAppRepo} target="_blank" rel="noreferrer">
-						{webAppRepo}
-					</a>
-				</div>
-				{hasApp && (
-					<div className="flex flex-wrap  ">
-						<h3 className="font-bold pr-[1ch]">App:</h3>
-						<a href={mobileAppRepo} target="_blank" rel="noreferrer">
-							{mobileAppRepo}
-						</a>
-					</div>
-				)}
 			</motion.div>
 		</motion.div>
 	);

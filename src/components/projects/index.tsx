@@ -25,7 +25,7 @@ function index() {
 	return (
 		<section
 			id="projects"
-			className="dark:bg-[#1b1b1c]  relative  px-10 md:px-16 lg:px-28 md:pt-16   ">
+			className="dark:bg-[#1b1b1c]  relative    md:pt-16   ">
 			<motion.h1 className="">Projects</motion.h1>
 			<motion.div
 				variants={whileOnScreen}

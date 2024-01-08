@@ -1,6 +1,6 @@
 import { Variants, motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { FaLink } from "react-icons/fa6";
+// import { FaLink } from "react-icons/fa6";
 
 interface CardProps {
 	img: string;

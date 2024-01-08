@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm ci
-      - run: git config --global user.name "awyyyn"
-          git config --global user.email "alwin.puche16@gmail.com"
+      - run: git config user.name awyyyn
+          git config user.email alwin.puche16@gmail.com
       - run: npm run build --if-present
       - run: npm run deploy --if-present

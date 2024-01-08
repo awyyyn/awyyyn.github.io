@@ -5,15 +5,15 @@ const Card = ({
 	alt,
 	description,
 	img,
-	techs,
+	// techs,
 	title,
-	hasApp,
-	appRepo,
-	id,
-	webRepo,
-	appUrl,
-	webUrl,
-}: Project) => {
+}: // hasApp,
+// appRepo,
+// id,
+// webRepo,
+// appUrl,
+// webUrl,
+Project) => {
 	const childrenVariant: Variants = {
 		animate: {
 			opacity: 1,

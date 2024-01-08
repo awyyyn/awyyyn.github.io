@@ -1,8 +1,8 @@
 // import React from "react";
-import { CiMobile1 } from "react-icons/ci";
-import { RxDesktop } from "react-icons/rx";
-import { VscTools } from "react-icons/vsc";
-import { TbFileDescription } from "react-icons/tb";
+// import { CiMobile1 } from "react-icons/ci";
+// import { RxDesktop } from "react-icons/rx";
+// import { VscTools } from "react-icons/vsc";
+// import { TbFileDescription } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { projects } from "../utils/constant";

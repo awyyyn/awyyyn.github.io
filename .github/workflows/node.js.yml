@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy with gh-pages
         run:
-          git remote set-url origin http://git:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          npm run deploy -- -u "github-actions-bot <support+action@github.com>"
+          git remote set-url origin http://git:${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.GITHUB_REPOSITORY }}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

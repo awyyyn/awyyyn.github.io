@@ -1,4 +1,3 @@
-import { m } from "framer-motion";
 import bnb from "../assets/bnb.png";
 import ecommerce from "../assets/ecommerce.png";
 import lending from "../assets/lending.png";

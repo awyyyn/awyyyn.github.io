@@ -1,0 +1,3 @@
+const handleOnPrint = () => {
+	window.print();
+};

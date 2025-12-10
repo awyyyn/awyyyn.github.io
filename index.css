@@ -46,6 +46,12 @@ body {
 	border-radius: 8px;
 }
 
+.doc-container::-webkit-scrollbar {
+	display: none;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
 @media screen and (max-width: 600px) {
 	.doc-container {
 		margin-inline: 5px;

@@ -35,8 +35,8 @@ body {
 }
 
 .h-screen {
-	height: 100vh;
-	max-height: 100vh;
+	height: calc(100vh - 10px);
+	max-height: calc(100vh - 10px);
 	overflow-y: auto;
 }
 
@@ -44,6 +44,12 @@ body {
 	margin-block: 5px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+	.doc-container {
+		margin-inline: 5px;
+	}
 }
 
 .job-container,

@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 850px;
+	margin: 0 auto;
+	padding: 3em;
+}
+
+body {
+	/* background-image: radial-gradient(black 1px, transparent 1px); */
+
+	/* background: linear-gradient(to bottom, #ffffff, #f0f0f0); */
+
+	/* background-size: 6px 6px; */
+
+	background-color: #fafafa;
+	background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+	background-size: 4px 4px;
+	overflow: hidden;
+}
+
+.divider {
+	height: 1px;
+	background-color: #4b494940;
+
+	margin: 20px 0;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+.h-screen {
+	height: 100vh;
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+.doc-container {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+}
+
+.job-container {
+	margin-top: 10px;
+	line-height: 1.5;
+}
+
+li {
+	margin-left: 0.5in;
+}

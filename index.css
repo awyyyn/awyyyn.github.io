@@ -45,7 +45,10 @@ body {
 	border-radius: 8px;
 }
 
-.job-container {
+.job-container,
+.education-container,
+.skills-list,
+.tech-stack-list {
 	margin-top: 10px;
 	line-height: 1.5;
 }
